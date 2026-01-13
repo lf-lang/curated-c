@@ -20,14 +20,14 @@ This repository contains the following:
 
 # Updating the Template Information
 
-If you have created your own repository from this template and you later wish to update
+If you have created your own repository from this template, and you later wish to update
 the context information to the latest template data, you can do this with the following steps:
 
 Add the template as a "remote" and merge its history into your own:
 
 1. Add the template as a remote:
    ```
-   git remote add template github.com
+   git remote add template https://github.com/lf-lang/curated-c.git
    ```
 
 2. Fetch the latest changes:
