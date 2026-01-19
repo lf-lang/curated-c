@@ -55,9 +55,11 @@ update-context:
 	@./scripts/clone_and_copy_subdir.sh https://github.com/lf-lang/lingua-franca.git test/C context/tests
 	@echo "======= Updating context from playground-lingua-franca repository..."
 	@./scripts/clone_and_copy_subdir.sh https://github.com/lf-lang/playground-lingua-franca.git examples/C context/examples
-# lf-demo repo currently contains only C examples, so we don't update it
-#	@echo "======= Updating context from lf-demos repository..."
-#	@./scripts/clone_and_copy_subdir.sh https://github.com/lf-lang/lf-demos.git . context/demos
+	@echo "======= Updating context from lf-demos repository..."
+	@./scripts/clone_and_copy_subdir.sh https://github.com/lf-lang/lf-demos.git . context/demos
+	@echo "======= Updating context from library repositories..."
+	@./scripts/clone_and_copy_subdir.sh https://github.com/lf-lang/mujoco-c.git . context/libraries/mujoco-c
+	@./scripts/clone_and_copy_subdir.sh https://github.com/lf-lang/mqtt-c.git . context/libraries/mqtt-c
 	@echo "======= Removing excluded directories..."
 	@for name in $(EXCLUDE); do \
 		find context -type d -name "$$name" | while read dir; do \
